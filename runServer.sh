@@ -11,13 +11,13 @@ if [ -z "$port_available" ];
 	then
 		echo "Starting Monitoring Clients"
 		mkdir log 2> /dev/null
-		python -u src/DTNMon.py > ./log/DTNMonitor.log &
+		python -u src/DTNMon.py >> ./log/DTNMonitor.log &
 		DTNMON_PID=$!
 		echo "DTNMON running PID = $DTNMON_PID"
-		python -u src/FlowMon.py $IP_addr $data_location $IP_addr $IP_DTNS > ./log/FlowMon.log &
+		python -u src/FlowMon.py $IP_addr $data_location $IP_addr $IP_DTNS >> ./log/FlowMon.log &
 		FlowMon_PID=$!
 		echo "Flowmon running PID = $FlowMon_PID"
-		python -u src/nmon_analyser.py $IP_addr $interface $IP_addr >  ./log/nmon.log &
+		python -u src/nmon_analyser.py $IP_addr $interface $IP_addr >>  ./log/nmon.log &
 		nMon_PID=$!
 		echo "nmon_analyser running PID = $nMon_PID"
 	
