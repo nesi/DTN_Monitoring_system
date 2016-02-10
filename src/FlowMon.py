@@ -109,7 +109,8 @@ def watch_Flow(myIP,DTNs,transfer_monitor,flow_counter):
                 print('error on decrypting line {0}'.format(socket))
             
     for flow in flows: # parse sockets into flow objects
-        if flow.dst_IP in DTNs and flow.source_port > 50000 and flow.dst_port > 50000:
+        if (flow.dst_IP in DTNs and flow.source_port > 50000 and flow.source_port < 51000
+        and flow.dst_port > 50000 and flow.dst_port < 51000):
             flow_counter.update_flow_number(flow)
             insert_transfer_flow(flow, transfer_flows,transfer_monitor)
             transfer_found = True    

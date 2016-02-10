@@ -129,6 +129,7 @@ def main(myIP, interface, DTN_Monitor):
     while True:
         try:
             nmon_process = subprocess.Popen(args)
+            out, err = nmon_process.communicate()
             time.sleep(nmon_period)
             nmon_analyser = Nmon_analyser(myIP, interface, DTN_Monitor)
             nmon_analyser.start()        
