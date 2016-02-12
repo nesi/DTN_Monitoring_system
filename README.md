@@ -37,3 +37,13 @@ interface : name of the interface used by the transfer.
 Execute runClient.sh to run the server.
 
 To get the report, run python drawplot.py in server. It will ask you to choose the date you want to get report from. To get the report, navigate into ./result/date-wanted/ and look for .pdf file for TCP read/write and transfer speed data.
+
+#Components:
+=======================
+DTNMon : A server that receives data sent from clients and archive them in the local result directory. It listens to TCP port 50000, receives serialised python objects (Flow_data and System_data) and deserialize them. It builds flow table for transfers (both one-way and two-way) and watches transfer speed. It generates output from Flow data and System data received in CSV format. Currently, it only watches the transfer speed from flow_table, but it can be extended to alarm the user when the speed drops below certain point.
+
+FlowMon : A client that watches TCP port >50000 and < 51000 to watch transfers. It uses netstat each seconds to check whether there is any transfer is happening. It creates Flow instances from actual transfer using 5 tuple information, append number of bytes transferred using TransferMon, archive them for a minute and sends the archive to the server.
+
+TransferMon : A scripts that checks files size of a specific directory(this case, it is a transfer location). It stores all the file sizes in the folder and check the differences each second to calculate how many bytes added to the directory.
+
+nmon_analyser: A client that runs nmon for each second and analyse its output. Currently, it watches TCP socket read/write and physical CPU times for user and system. It creates System data instances from the nmon output, archives for a second and sends to the server.
