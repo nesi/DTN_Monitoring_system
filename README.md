@@ -38,6 +38,23 @@ Execute runClient.sh to run the server.
 
 To get the report, run python drawplot.py in server. It will ask you to choose the date you want to get report from. To get the report, navigate into ./result/date-wanted/ and look for .pdf file for TCP read/write and transfer speed data.
 
+#Running each component:
+=======================
+Each component can be run separately with following instruction
+
+DTNMON: Do not require any parameter. 
+
+FlowMon : Require 4+ arguments in order, separated by space.
+1st arg = IP address of the DTN it is running
+2nd arg = Physical location of data
+3rd arg = IP address of DTNMon to report
+4th+ arg = IP address(es) of other DTN to watch
+
+nmon_analyser : Require 3 argments in order, sepearted by space.
+1st arg = IP address of the DTN it is running
+2nd arg = Interface name to watch
+3rd arg = IP address of DTNMon to report
+
 #Components:
 =======================
 DTNMon : A server that receives data sent from clients and archive them in the local result directory. It listens to TCP port 50000, receives serialised python objects (Flow_data and System_data) and deserialize them. It builds flow table for transfers (both one-way and two-way) and watches transfer speed. It generates output from Flow data and System data received in CSV format. Currently, it only watches the transfer speed from flow_table, but it can be extended to alarm the user when the speed drops below certain point.
