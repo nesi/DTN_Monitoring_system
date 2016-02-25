@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+#author : Se-young Yu
+#Date : 02/26/2016
 #comment : watching netstat each second to check if gridftp is running. If it is,
 # get the transfer rate by looking at the file size difference and 5 tuples from
 #netstat command

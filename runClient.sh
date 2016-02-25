@@ -1,4 +1,6 @@
 #!/bin/bash
+#author : Se-young Yu
+#Date : 02/26/2016
 
 IP_addr='123.123.123.123' # IP address of the DTN connected to DTN network
 IP_monitor='123.123.123.123' # IP address of the monitoring machine

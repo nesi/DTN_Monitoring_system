@@ -1,4 +1,6 @@
 #!/usr/bin/python
+#author : Se-young Yu
+#Date : 02/26/2016
 #comment: This module runs nmon for predifined period and analyse the output.
 #The output analysed is sent to the DTN monitor
 

@@ -1,4 +1,6 @@
 #!/usr/bin/python
+#author : Se-young Yu
+#Date : 02/26/2016
 #comment : This module runs a DTN monitoring server to receive system records from the client
 # and write to the output in result directory
 

@@ -1,4 +1,7 @@
 #!/bin/bash
+#author : Se-young Yu
+#Date : 02/26/2016
+
 IP_addr='123.123.123.124' # IP address of the DTN monitor
 IP_DTNS='123.123.123.123 123.123.123.124' # IP address of other DTNs seperated by space
 data_location='/projects/uoa1234' # Location of the data storage folder

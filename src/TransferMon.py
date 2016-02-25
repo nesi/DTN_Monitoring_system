@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #author : Se-young Yu
-#
+#Date : 02/26/2016
 #comment: This module calculate file sizes of the path given and return difference of the
 #file size each time they run get_size_diff()
 

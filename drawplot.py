@@ -1,4 +1,6 @@
 #comment: This module analyse output of the DTN monitor and generate plot
+#author : Se-young Yu
+#Date : 02/26/2016
 
 import matplotlib.pyplot as plt
 import datetime
